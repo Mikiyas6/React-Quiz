@@ -6,10 +6,7 @@ function Options({ question, dispatch, answer }) {
           onClick={() =>
             dispatch({
               type: "newAnswer",
-              payload: {
-                answer: idx,
-                point: idx === question.correctOption ? question.points : 0,
-              },
+              payload: idx,
             })
           }
           key={option.id}

@@ -22,10 +22,14 @@ function reducer(state, action) {
     case "start":
       return { ...state, status: "active" };
     case "newAnswer":
+      const question = state.questions.at(state.index);
       return {
         ...state,
-        answer: action.payload.answer,
-        points: state.points + action.payload.point,
+        answer: action.payload,
+        points:
+          action.payload === question.correctOption
+            ? state.points + question.points
+            : state.points,
       };
     case "prev":
       return { ...state, index: state.index > 0 ? state.index - 1 : 0 };
