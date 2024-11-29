@@ -6,14 +6,14 @@ Test your knowledge with **The React Quiz**, a fun and dynamic quiz application 
 
 ## 📸 Screenshot
 
-![React App](./public/TheReactQuiz)
+![React App](./public/The-React-Quiz.png)
 
 ---
 
 ## 🔗 Links
 
 - Github Repo: [Github-link](https://github.com/Mikiyas6/React-Quiz)
-- Live Site URL: [Page-link](https://my-react-quiz.netlify.app/)
+- Live Site URL: [Page-link](https://mike-react-quiz-app.netlify.app/)
 
 ---
 
