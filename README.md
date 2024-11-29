@@ -6,7 +6,7 @@ Test your knowledge with **The React Quiz**, a fun and dynamic quiz application 
 
 ## 📸 Screenshot
 
-![React App](./public/TheReactQuiz)
+![React App](./public/The-React-Quiz.png)
 
 ---
 
