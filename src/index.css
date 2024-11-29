@@ -180,6 +180,12 @@ progress {
   margin-bottom: 1.6rem;
 }
 
+.result--label {
+  border-radius: 10px;
+  background-color: var(--color-darkest);
+  padding: 1rem;
+}
+
 .result span {
   font-size: 2.2rem;
   margin-right: 4px;
