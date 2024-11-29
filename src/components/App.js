@@ -6,6 +6,7 @@ import Error from "./Error";
 import StartScreen from "./StartScreen";
 import Question from "./Question";
 import NextButton from "./NextButton";
+import Progress from "./Progress";
 const initialState = {
   questions: [],
   // Different status that the application is going to be in---- 'loading', 'error', 'ready','active','finished'
@@ -36,10 +37,7 @@ function reducer(state, action) {
     case "nextQuestion":
       return {
         ...state,
-        index:
-          state.index < this.questions.length - 1
-            ? state.index + 1
-            : this.questions.length - 1,
+        index: state.index < 14 ? state.index + 1 : 14,
         answer: null,
       };
     default:
@@ -49,15 +47,16 @@ function reducer(state, action) {
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { questions, status, index, answer, points } = state;
-
+  const totalPoints = questions.reduce(
+    (total, question) => total + question.points,
+    0
+  );
   const numQuestions = questions.length;
   useEffect(function () {
     fetch("http://localhost:8000/questions")
       .then((res) => res.json())
-      .then((data) =>
-        console.log(dispatch({ type: "dataReceived", payload: data }))
-      )
-      .catch((err) => console.log(dispatch({ type: "dataFailed" })));
+      .then((data) => dispatch({ type: "dataReceived", payload: data }))
+      .catch((err) => dispatch({ type: "dataFailed" }));
   }, []);
 
   return (
@@ -71,6 +70,13 @@ export default function App() {
         )}
         {status === "active" && (
           <>
+            <Progress
+              index={index}
+              numQuestions={numQuestions}
+              points={points}
+              totalPoints={totalPoints}
+              answer={answer}
+            />
             <Question
               questions={questions}
               dispatch={dispatch}

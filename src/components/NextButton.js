@@ -1,5 +1,5 @@
-function NextButton(dispatch, answer) {
-  if (answer === null) return null;
+function NextButton({ dispatch, answer }) {
+  if (answer === null) return;
   return (
     <button
       className="btn btn-ui"
