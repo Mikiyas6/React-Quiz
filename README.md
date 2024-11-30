@@ -47,7 +47,7 @@ Test your knowledge with **The React Quiz**, a fun and dynamic quiz application 
 
 1. **Clone the repository:**  
    ```bash  
-   git clone https://github.com/your-username/the-react-quiz.git  
+   git clone https://github.com/Mikiyas6/React-Quiz.git  
    ```  
 
 2. **Navigate to the project directory:**  
