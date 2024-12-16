@@ -1,12 +1,10 @@
 import { useEffect } from "react";
-import { useQuiz } from "../context/QuizContext";
 function formatToMinutesSeconds(totalSeconds) {
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
   return `${minutes}:${seconds.toString().padStart(2, "0")}`; // Format seconds to always be 2 digits
 }
-function Timer() {
-  const { dispatch, secondsRemaining } = useQuiz();
+function Timer({ dispatch, secondsRemaining }) {
   useEffect(
     function () {
       const id = setInterval(function () {
